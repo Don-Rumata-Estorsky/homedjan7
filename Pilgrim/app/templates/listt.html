@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hom</title>
+</head>
+<body>
+    
+    <h1 style="margin-left: auto;">* spisok zadach :  *</h1> <br>
+
+<br>
+
+<div >
+    <h1>To-Do List</h1>
+    <div >
+      <input type="text" id="input" placeholder="new zadacha ">
+      <button onclick="addTask()">Add</button>
+    </div>
+    <ul id="list" class="list"></ul>
+  </div>
+
+
+
+<script>
+  function addTask() {
+  const input = document.getElementById('input');
+  const taskText = input.value.trim();
+
+
+  const taskList = document.getElementById('list');
+  const listItem = document.createElement('li');
+  listItem.innerHTML = `
+  ${taskText}
+  <button onclick="deleteTask(this)">delete</button>
+    `;
+
+taskList.appendChild(listItem);
+input.value = '';}
+
+  function deleteTask(button) {
+    const taskItem = button.parentElement;
+    taskItem.remove();}
+  </script>
+
+
+
+
+
+
+</body>
+</html>
